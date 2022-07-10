@@ -1,5 +1,12 @@
+local function check_if_slot_empty_select_next()
+    if turtle.getItemCount( turtle.getSelectedSlot() ) == 0 then
+        current_slot = current_slot + 1
+        turtle.select(current_slot)
+    end
+end
 local function build_a_cock (length, width)
     for i = 1, 3, 1 do
+        check_if_slot_empty_select_next()
         turtle.place()
         turtle.turnRight()
         turtle.forward()
@@ -11,6 +18,7 @@ local function build_a_cock (length, width)
     turtle.turnRight()
     for i = 1, 3, 1 do
         turtle.up()
+        check_if_slot_empty_select_next()
         turtle.place()
     end
     for i = 1, 3, 1 do
@@ -26,7 +34,9 @@ local function build_a_cock (length, width)
     turtle.turnLeft()
 end
 
-print("How much cocks do you need ( ͡° ͜ʖ ͡°)")
+current_slot = 1
+
+print("How much cocks do you need???? =")
 local count = read()
 print("How long is your cock ( ͡° ͜ʖ ͡°)")
 local length = read()
