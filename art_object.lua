@@ -16,12 +16,12 @@ local function build_a_cock (length, width)
     turtle.forward()
     turtle.forward()
     turtle.turnRight()
-    for i = 1, 3, 1 do
+    for i = 1, length, 1 do
         turtle.up()
         check_if_slot_empty_select_next()
         turtle.place()
     end
-    for i = 1, 3, 1 do
+    for i = 1, length, 1 do
         turtle.down()
     end
 
@@ -36,11 +36,11 @@ end
 
 current_slot = 1
 
-print("How much cocks do you need???? =")
+print("How much cocks do you need 0_0 =")
 local count = read()
-print("How long is your cock ( ͡° ͜ʖ ͡°)")
+print("How long is your cock :*")
 local length = read()
-print("How long is width between your cocks ( ͡° ͜ʖ ͡°)")
+print("How long is width between your cocks *__*")
 local width = read()
 
 for i = 1, count, 1 do
